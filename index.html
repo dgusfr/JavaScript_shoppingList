@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Compras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <main class="container">
+    <div class="content">
+      <!-- Lista de alimentos -->
+      <div>
+        <h2 class="title">Lista de compras - Alimentos</h2>
+        <ul class="lista lista-alimentos" id="lista-de-itens-alimentos">
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Arroz</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Azeite/óleo</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Batata Doce</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Batata Frita</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Banana</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Bolacha</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Café</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Cappuccino</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Carne de soja</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Carne vermelha</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Cerveja</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Cebola</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Creme de leite</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Farofa</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Feijão</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Frango</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Frutas</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Hambúrguer</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Herbissimo</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Ketchup</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Leite</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Limão</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Macarrão</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Melita</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Molho</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Orégano</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Ovo</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Pão de Forma</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Pão de Queijo</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Pasta de amendoim</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Patê de atum</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Pipoca</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Queijo ralado</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Salada</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Suco clight</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Tapioca</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Tempero feijão</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Vinho</li>
+        </ul>
+      </div>
+
+      <!-- Lista de produtos de limpeza -->
+      <div>
+        <h2 class="title">Lista de compras - Produtos de Limpeza</h2>
+        <ul class="lista lista-limpeza" id="lista-de-itens-limpeza">
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Adoçante</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Álcool</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Algodão</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Água sanitária</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Bom ar</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Bucha de pia</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Detergente</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Desinfectante</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Enxaguante bucal</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Papel alumínio</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Papel higiênico</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Papel toalha</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Pasta de dente</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Sabão líquido (Brilhante)</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Sabonete Liquido/Barra</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Saco de lixo</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Shampoo</li>
+        </ul>
+      </div>
+
+      <section>
+        <h2 class="title">Comprados</h2>
+        <ul class="lista lista-comprados" id="itens-comprados">
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const checkboxItems = document.querySelectorAll('.checkbox-item');
+    const listaDeItensAlimentos = document.getElementById('lista-de-itens-alimentos');
+    const listaDeItensLimpeza = document.getElementById('lista-de-itens-limpeza');
+    const itensComprados = document.getElementById('itens-comprados');
+
+    checkboxItems.forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        const item = this.parentElement;
+        const category = item.getAttribute('data-category');
+        if (this.checked) {
+          item.classList.add('item-riscado');
+          itensComprados.appendChild(item);
+        } else {
+          item.classList.remove('item-riscado');
+          if (category === "alimentos") {
+            listaDeItensAlimentos.appendChild(item);
+          } else if (category === "limpeza") {
+            listaDeItensLimpeza.appendChild(item);
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
