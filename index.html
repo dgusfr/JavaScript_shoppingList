@@ -13,7 +13,6 @@
 
   <main class="container">
     <div class="content">
-      <!-- Lista de alimentos -->
       <div>
         <h2 class="title">Lista de compras - Alimentos</h2>
         <ul class="lista lista-alimentos" id="lista-de-itens-alimentos">
@@ -30,7 +29,9 @@
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Carne vermelha</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Cerveja</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Cebola</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Chocolate</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Creme de leite</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Danone</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Farofa</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Feijão</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Frango</li>
@@ -53,6 +54,7 @@
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Patê de atum</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Pimentão</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Pipoca</li>
+          <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Presunto & Queijo</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Queijo ralado</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Salada</li>
           <li data-category="alimentos"><input type="checkbox" class="checkbox-item"> Salsicha</li>
@@ -63,7 +65,6 @@
         </ul>
       </div>
 
-      <!-- Lista de produtos de limpeza -->
       <div>
         <h2 class="title">Lista de compras - Produtos de Limpeza</h2>
         <ul class="lista lista-limpeza" id="lista-de-itens-limpeza">
@@ -71,6 +72,7 @@
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Adoçante</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Álcool</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Algodão</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Amaciante</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Água sanitária</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Bom ar</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Bucha de pia</li>
@@ -86,6 +88,7 @@
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Sabão líquido (Brilhante)</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Sabonete Liquido/Barra</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Saco de lixo</li>
+          <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Sachê</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> Shampoo</li>
           <li data-category="limpeza"><input type="checkbox" class="checkbox-item"> tenys pé</li>
         </ul>
@@ -105,6 +108,24 @@
     const listaDeItensLimpeza = document.getElementById('lista-de-itens-limpeza');
     const itensComprados = document.getElementById('itens-comprados');
 
+    function salvarEstado() {
+      const comprados = Array.from(itensComprados.children).map(item => item.textContent.trim());
+      localStorage.setItem('itensComprados', JSON.stringify(comprados));
+    }
+
+    function carregarEstado() {
+      const comprados = JSON.parse(localStorage.getItem('itensComprados')) || [];
+      checkboxItems.forEach(checkbox => {
+        const item = checkbox.parentElement;
+        const itemName = item.textContent.trim();
+        if (comprados.includes(itemName)) {
+          checkbox.checked = true;
+          item.classList.add('item-riscado');
+          itensComprados.appendChild(item);
+        }
+      });
+    }
+
     checkboxItems.forEach(checkbox => {
       checkbox.addEventListener('change', function () {
         const item = this.parentElement;
@@ -120,8 +141,11 @@
             listaDeItensLimpeza.appendChild(item);
           }
         }
+        salvarEstado();
       });
     });
+
+    carregarEstado();
   </script>
 
 </body>
